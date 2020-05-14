@@ -1,5 +1,4 @@
-# docker
-docker入门
+# docker基础
 
 ## 什么是docker?
 类似VM虚拟机一样的虚拟技术，但更准确的说法，其实应该是一个虚拟环境，但是docker比VM虚拟机更加轻量级、更快，更加易于移植。
@@ -16,10 +15,10 @@ docker入门
 https://www.widuu.com/chinese_docker/installation/windows.html
 
 ## docker的使用
-1.设置docker开机自启动<br>
+* 设置docker开机自启动<br>
 systemctl enable docker
   
-2.docker的启动、重启、停止<br>
+* docker的启动、重启、停止<br>
 service docker start
 service docker restart
 service docker stop
@@ -86,21 +85,21 @@ docker run --name nginx-test -p 8080:80 -d nginx（还有很多参数,下面可�
   docker ps -a 查看所有的容器
    
    
-9.容器的启动、重启、停止、删除
- docker start <ContainerId(或者name)>     启动容器
- docker stop <ContainerId(或者name)>      停止容器
- docker restart <ContainerId(或者name)>   重启容器
- docker rm <ContainerId(或者name)>        删除容器
+9.容器的启动、重启、停止、删除<br>
+ docker start <ContainerId(或者name)>     启动容器<br>
+ docker stop <ContainerId(或者name)>      停止容器<br>
+ docker restart <ContainerId(或者name)>   重启容器<br>
+ docker rm <ContainerId(或者name)>        删除容器<br>
 
-10.连接容器
+10.连接容器<br>
 docker exec -it containerID /bin/bash
 
-11.查看容器日志
+11.查看容器日志<br>
 docker logs -f -t --tail <行数> <容器名或者containerID>
 
-12.docker与宿主机之间的拷贝
-文件从宿主机拷贝到容器:    docker cp 宿主机文件路径   容器名:存放路径
+12.docker与宿主机之间的拷贝<br>
+文件从宿主机拷贝到容器:    docker cp 宿主机文件路径   容器名:存放路径<br>
 docker cp /home/jenkins/test.txt jenkins:/var/jenkins_home
 
-文件从容器拷贝到宿主机   docker cp 容器名:要拷贝的文件路径  宿主机存放路径  
+文件从容器拷贝到宿主机   docker cp 容器名:要拷贝的文件路径  宿主机存放路径 <br> 
 docker cp nginx:/var/nginx_home/test.txt /home/nginx
