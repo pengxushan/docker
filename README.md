@@ -1,10 +1,10 @@
 # docker
 docker入门
 
-##什么是docker?
+## 什么是docker?
 类似VM虚拟机一样的虚拟技术，但更准确的说法，其实应该是一个虚拟环境，但是docker比VM虚拟机更加轻量级、更快，更加易于移植。
 
-##docker的生命周期
+## docker的生命周期
 镜像：Image，可以被用户相互分享文件，例如window重装系统，首先需要一个iso镜像文件，然后才能进行系统的重装,类比一下，Docker中也有这个东西，镜像是静态的，你不能对他操作，只能pull别人的镜像或者push自己的镜像.
 
 容器：Container，可以理解为容器是镜像动态状态，比如说window通过iso镜像安装之后的状态，前面有提到镜像只能被分享和下载不能被操作，但是容器是能被操作的.
@@ -12,32 +12,32 @@ docker入门
 仓库：Repository，类似于git和gitHub仓库,docker仓库是用来包含镜像的位置，当用户创建了自己的镜像之后就可以使用push命令将它上传到公有或者私友的仓库，这样在另外一台客户端如果需要使用直接pull下来就可以了.
 
 
-##doker安装（所有版本）
+## doker安装（所有版本）
 https://www.widuu.com/chinese_docker/installation/windows.html
 
-##docker的使用
-1.设置docker开机自启动
+## docker的使用
+1.设置docker开机自启动<br>
 systemctl enable docker
   
-2.docker的启动、重启、停止
+2.docker的启动、重启、停止<br>
 service docker start
 service docker restart
 service docker stop
 
-3.查询镜像
+3.查询镜像<br>
 docker search <镜像名称>
 
-4.获取镜像
+4.获取镜像<br>
 docker pull <镜像名称>
 
-5.查看镜像
+5.查看镜像<br>
  docker images：列出images
  docker images -a：列出所有的images（包含历史）
  
-6.删除镜像 
+6.删除镜像<br>
  docker rmi  <image ID>
   
-7.创建容器（举例nginx）
+7.创建容器（举例nginx）<br>
 docker run --name nginx-test -p 8080:80 -d nginx（还有很多参数,下面可以参考）
 
   -d, --detach=false         指定容器运行于前台还是后台，默认为false   
@@ -81,7 +81,7 @@ docker run --name nginx-test -p 8080:80 -d nginx（还有很多参数,下面可�
   --sig-proxy=true           设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理 
   
   
-8.查看容器
+8.查看容器<br>
   docker ps    查看正在运行的容器
   docker ps -a 查看所有的容器
    
