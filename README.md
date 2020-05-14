@@ -103,4 +103,4 @@ docker logs -f -t --tail <行数> <容器名或者containerID>
 docker cp /home/jenkins/test.txt jenkins:/var/jenkins_home
 
 文件从容器拷贝到宿主机   docker cp 容器名:要拷贝的文件路径  宿主机存放路径  
-docker cp jenkins:/var/jenkins_home/test.txt /home/jenkins
+docker cp nginx:/var/nginx_home/test.txt /home/nginx
