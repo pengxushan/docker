@@ -16,28 +16,44 @@ https://www.widuu.com/chinese_docker/installation/windows.html
 
 ## Docker基本运用
 * 设置docker开机自启动<br>
+```
 systemctl enable docker
+```
   
 * docker的启动、重启、停止<br>
+```
 service docker start
 service docker restart
 service docker stop
+```
 
 * 查询镜像<br>
+```
 docker search <镜像名称>
+```
 
 * 获取镜像<br>
+```
 docker pull <镜像名称>
+```
 
 * 查看镜像<br>
+```
  docker images：列出images
  docker images -a：列出所有的images（包含历史）
+``` 
  
 * 删除镜像<br>
+```
  docker rmi  <image ID>
+```
   
 * 创建容器（举例nginx）<br>
+```
 docker run --name nginx-test -p 8080:80 -d nginx（还有很多参数,下面可以参考）
+```
+<br>
+
 ```
   -d, --detach=false         指定容器运行于前台还是后台，默认为false   
   -i, --interactive=false    打开STDIN，用于控制台交互  
@@ -80,25 +96,35 @@ docker run --name nginx-test -p 8080:80 -d nginx（还有很多参数,下面可�
   --sig-proxy=true           设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理  
 ```  
 * 查看容器<br>
+```
   docker ps    查看正在运行的容器
   docker ps -a 查看所有的容器
-   
+```   
    
 * 容器的启动、重启、停止、删除<br>
+```
  docker start <ContainerId(或者name)>     启动容器<br>
  docker stop <ContainerId(或者name)>      停止容器<br>
  docker restart <ContainerId(或者name)>   重启容器<br>
- docker rm <ContainerId(或者name)>        删除容器<br>
+ docker rm <ContainerId(或者name)>        删除容器<br> 
+ 
+ ```
 
 * 连接容器<br>
+```
 docker exec -it containerID /bin/bash
+```
 
 * 查看容器日志<br>
+```
 docker logs -f -t --tail <行数> <容器名或者containerID>
+```
 
 * docker与宿主机之间的拷贝<br>
+```
 文件从宿主机拷贝到容器:  docker cp 宿主机文件路径   容器名:存放路径<br>
-docker cp /home/jenkins/test.txt jenkins:/var/jenkins_home
+docker cp /home/test.txt nginx:/var/nginx_home
 
 文件从容器拷贝到宿主机   docker cp 容器名:要拷贝的文件路径  宿主机存放路径 <br> 
-docker cp nginx:/var/nginx_home/test.txt /home/nginx
+docker cp nginx:/var/nginx_home/test.txt /home
+```
