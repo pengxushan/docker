@@ -38,7 +38,7 @@ docker pull <镜像名称>
   
 * 创建容器（举例nginx）<br>
 docker run --name nginx-test -p 8080:80 -d nginx（还有很多参数,下面可以参考）
-
+```
   -d, --detach=false         指定容器运行于前台还是后台，默认为false   
   -i, --interactive=false    打开STDIN，用于控制台交互  
   -t, --tty=false            分配tty设备，该可以支持终端登录，默认为false  
@@ -77,9 +77,8 @@ docker run --name nginx-test -p 8080:80 -d nginx（还有很多参数,下面可�
                                 on-failure：容器故障退出（返回值非零）时重启 
                                 always：容器退出时总是重启  
   --rm=false                 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)  
-  --sig-proxy=true           设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理 
-  
-  
+  --sig-proxy=true           设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理  
+```  
 * 查看容器<br>
   docker ps    查看正在运行的容器
   docker ps -a 查看所有的容器
