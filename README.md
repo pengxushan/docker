@@ -48,7 +48,7 @@ docker pull <镜像名称>
  docker rmi  <image ID>
 ```
   
-* 容器的创建（举例reds）<br>
+* 容器的创建（举例redis）<br>
 ```
 1.创建redis挂载目录<br>
  mkdir -p /data/docker/redis/conf  配置文件
