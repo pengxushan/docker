@@ -48,9 +48,14 @@ docker pull <镜像名称>
  docker rmi  <image ID>
 ```
   
-* 创建容器（举例nginx）<br>
+* 容器的创建（举例reds）<br>
 ```
-docker run --name nginx-test -p 8080:80 -d nginx（还有很多参数,下面可以参考）
+1.创建redis挂载目录<br>
+ mkdir -p /data/docker/redis/conf  配置文件
+ mkdir -p /root/docker/redis/data  数据
+
+2.创建容器<br>
+docker run -d --privileged=true -p 6379:6379 --restart always -v /data/docker/redis/conf/redis.conf:/etc/redis/redis.conf -v /data/docker/redis/data:/data --name myredis redis redis-server /etc/redis/redis.conf --appendonly yes
 ```
 <br>
 
