@@ -128,3 +128,11 @@ docker cp /home/test.txt nginx:/var/nginx_home
 文件从容器拷贝到宿主机   docker cp 容器名:要拷贝的文件路径  宿主机存放路径 <br> 
 docker cp nginx:/var/nginx_home/test.txt /home
 ```
+## Docker课后作业
+```
+1.安装docker（环境不限）
+2.docker操作（启动、重启、停止）
+3.镜像操作（获取、删除、查看）
+4.容器操作（查看、启动、重启、停止、删除、连接、日志查看）
+5.docker和宿主机之间文件拷贝
+```
