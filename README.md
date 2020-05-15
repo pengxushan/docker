@@ -55,7 +55,7 @@ docker pull <镜像名称>
  mkdir -p /root/docker/redis/data  数据
 
 2.创建容器<br>
-docker run -d --privileged=true -p 6379:6379 --restart always -v /data/docker/redis/conf/redis.conf:/etc/redis/redis.conf -v /data/docker/redis/data:/data --name myredis redis redis-server /etc/redis/redis.conf --appendonly yes
+docker run -d --privileged=true -p 6379:6379 --restart always -v /data/docker/redis/conf:/etc/redis/redis.conf -v /data/docker/redis/data:/data --name redis-test redis redis-server /etc/redis/redis.conf --appendonly yes
 ```
 <br>
 
